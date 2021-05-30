@@ -4,7 +4,7 @@ services:
   nginx-proxy-automation-web:
     image: nginx:${NGINX_IMAGE_VERSION:-stable-alpine}
     labels:
-        com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
+      com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
     container_name: ${NGINX_WEB_SEVICE_NAME:-nginx-proxy-automation-web}
     restart: always
     ports:
@@ -14,6 +14,7 @@ services:
 #      - "${IPv6:-::0}:${DOCKER_HTTPS:-443}:443"
     environment:
       SSL_POLICY: ${SSL_POLICY:-Mozilla-Intermediate}
+#      ENABLE_IPV6: "true"
     volumes:
       - ${NGINX_FILES_PATH:-./data}/conf.d:/etc/nginx/conf.d
       - ${NGINX_FILES_PATH:-./data}/vhost.d:/etc/nginx/vhost.d
@@ -70,3 +71,4 @@ networks:
   default:
     external:
       name: ${NETWORK:-proxy}
+
