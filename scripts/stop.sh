@@ -1,7 +1,7 @@
 #!/bin/sh
-docker_path=$NGINX_DOCKER
+nextcloud_docker_path=`realpath $(dirname $(readlink -f $0))/../`
+cd $nextcloud_docker_path
 RC=0
-cd $docker_path
 /usr/bin/docker-compose down -v --remove-orphans || RC=1
 rm proxy/conf.d/default.conf
 exit $RC

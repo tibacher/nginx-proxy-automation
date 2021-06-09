@@ -1,7 +1,9 @@
 #!/bin/sh
-docker_path=$NGINX_DOCKER
+
+nextcloud_docker_path=`realpath $(dirname $(readlink -f $0))/../`
+cd $nextcloud_docker_path
+
 RC=0
-cd $docker_path
 
 sudo -u 33 cp ./conf.d/uploadsize.conf ./data/conf.d/
 
