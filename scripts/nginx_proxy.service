@@ -6,7 +6,6 @@ After=docker.service
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-Environment="NGINX_DOCKER=/docker/proxy/"
 ExecStart=/docker/proxy/scripts/start.sh
 ExecStop=/docker/proxy/scripts/stop.sh
 

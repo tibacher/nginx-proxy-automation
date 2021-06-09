@@ -1,7 +1,7 @@
 #!/bin/sh
 
-nextcloud_docker_path=`realpath $(dirname $(readlink -f $0))/../`
-cd $nextcloud_docker_path
+docker_path=`realpath $(dirname $(readlink -f $0))/../`
+cd $docker_path
 
 RC=0
 
