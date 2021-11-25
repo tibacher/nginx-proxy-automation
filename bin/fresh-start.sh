@@ -452,6 +452,25 @@ while [[ $# -gt 0 ]]; do
     shift 1
     ;;
 
+  # Default host
+  -dh)
+    ARG_DEFAULT_HOST="${2}"
+    if [[ $ARG_DEFAULT_HOST == "" ]]; then
+      echoerror "Invalid option for -dh"
+      break
+    fi
+    shift 2
+    ;;
+  --default-host=*)
+    ARG_DEFAULT_HOST="${1#*=}"
+    if [[ $ARG_DEFAULT_HOST == "" ]]; then
+      echoerror "Invalid option for --default-host"
+      break
+    fi
+    shift 1
+    ;;
+
+  # Other options
   --update-nginx-template)
     UPDATE_NGINX_TEMPLATE=true
     shift 1
@@ -496,7 +515,7 @@ done
 run_function check_local_env_file
 
 # Specific PID File if needs to run multiple scripts
-NEW_PID_FILE=${PID_FILE_FRESH_INSTALL:-".fresh_start"}
+NEW_PID_FILE=${PID_FILE_FRESH_INSTALL:-".fresh_start.pid"}
 
 # Run initial check function
 run_function starts_initial_check $NEW_PID_FILE

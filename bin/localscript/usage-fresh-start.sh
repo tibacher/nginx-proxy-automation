@@ -116,6 +116,10 @@ Usage:
     -sp     | --ssl-policy              Proxy SSL suport
                                         (default: Mozilla-Intermediate)
 
+    Default Host
+    -df     | --default-host            The default host where nginx-proxy will redirect all requests to
+                                        the container that matches the VIRTUAL_HOST
+
     IPv6 support
     --activate-ipv6                     Use to activate IPv6 support
     -ipv6   | --ipv6-address            IPv6 address for external connectivity
