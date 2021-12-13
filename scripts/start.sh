@@ -5,7 +5,7 @@ cd $docker_path
 
 RC=0
 
-sudo -u 33 cp ./conf.d/uploadsize.conf ./data/conf.d/
+sudo cp ./conf.d/* ./data/conf.d/
 
 /usr/bin/docker-compose up -d --remove-orphans || RC=1
 exit $RC
