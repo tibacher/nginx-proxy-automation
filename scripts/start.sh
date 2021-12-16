@@ -1,11 +1,12 @@
 #!/bin/sh
 
 docker_path=`realpath $(dirname $(readlink -f $0))/../`
-cd $docker_path
+cd $docker_path/bin 
+
+source ../.env
 
 RC=0
 
-sudo cp ./conf.d/* ./data/conf.d/
+sudo bash ./fresh-start.sh --update-nginx-template --use-nginx-conf-files --yes -e $DEFAULT_EMAIL
 
-/usr/bin/docker-compose up -d --remove-orphans || RC=1
 exit $RC

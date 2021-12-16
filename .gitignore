@@ -1,3 +1,5 @@
+
+*.backup_*
 data
 .env*
 !.env.sample
