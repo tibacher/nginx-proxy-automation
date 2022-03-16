@@ -1,0 +1,14 @@
+[Unit]
+Description=Docker - nginx proxy container
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/docker/proxy/scripts/start.sh
+ExecStop=/docker/proxy/scripts/stop.sh
+
+[Install]
+WantedBy=default.target
+				
