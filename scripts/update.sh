@@ -18,7 +18,7 @@ fi
 
 # 2. Update your repo
 git pull
-git checkout master
+git checkout compasscloud
 
 # 3. Check if your env files has the same line numbers
 if [ "$(wc -l .env | cut -f1 -d' ')" != "$(wc -l .env.sample | cut -f1 -d' ')" ]; then
