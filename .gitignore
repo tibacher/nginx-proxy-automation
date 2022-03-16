@@ -1,3 +1,4 @@
+docker-compose.yml.back*
 data
 .env*
 !.env.sample

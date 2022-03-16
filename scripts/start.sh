@@ -7,6 +7,6 @@ source ../.env
 
 RC=0
 
-sudo bash ./fresh-start.sh --update-nginx-template --use-nginx-conf-files --yes -e $DEFAULT_EMAIL
+sudo bash ./fresh-start.sh --update-nginx-template --use-nginx-conf-files --yes -e $DEFAULT_EMAIL --skip-docker-image-check
 
 exit $RC
